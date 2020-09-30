@@ -70,11 +70,22 @@ class BrewModel(DataProcessing):
 
 
     def brew_tags(self):
+        """
+        Set and parse Doc2Vec Top 1 match Intent and Similarity Score for each query.
+
+        :return:    ( DataFrame ) Original JSON Data in DataFrame format w/ New Intent + Similarity Score
+                                    from Top1 Match Doc2Vec
+        """
+
+        # Get the original JSON data in DataFrame format
         original_json_df = self.retrieve_process_json()
+        # Set Intent Similarity Score w/ New Intent
         original_json_df["Doc2Vec_Intent_Score"] = original_json_df["Query"].apply(self.brew_score)
+        # Split into individual columns : Intent and Score
         original_json_df[["Doc2Vec_Intent", "Doc2Vec_Score"]] = pd.DataFrame(original_json_df
                                                                                 ["Doc2Vec_Intent_Score"].tolist(),
                                                                                 index=original_json_df.index)
+        # Drop unused column
         original_json_df.drop("Doc2Vec_Intent_Score", axis=1, inplace=True)
 
         return original_json_df
