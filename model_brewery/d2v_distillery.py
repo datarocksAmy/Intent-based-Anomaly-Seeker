@@ -49,10 +49,21 @@ class BrewModel(DataProcessing):
 
 
     def brew_score(self, query_text):
+        """
+        Get top 1 similarity score for each query from Doc2Vec Model.
+
+        :param query_text:  ( String ) Processed query
+        :return:            ( List ) New Intent from Doc2Vec Model with Similarity Score
+        """
+
+        # Obtain Trained Doc2Vec Model
         doc2vec_model = Doc2Vec.load(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
+        # Process query to clean form and split sentence into words
         processed_sentence = (self.normalize(query_text)).split(" ")
+        # Get the top 1 match intent with similarity score through Doc2Vec Model
         most_similar_result = doc2vec_model.docvecs.most_similar(
             positive=[doc2vec_model.infer_vector(processed_sentence)], topn=1)
+        # Top 1 Intent w/ Similarity Score
         new_intent, intent_similarity_score = most_similar_result[0]
 
         return [new_intent, intent_similarity_score]
