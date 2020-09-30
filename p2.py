@@ -26,18 +26,29 @@ Your program should be able to run using the command :
 python p2.py data.json
 """
 
-from sys import argv
+import json
 
-from data_silo.data_processing import DataProcessing
 from model_brewery.d2v_distillery import BrewModel
 
 
-def main():
-    DataProcessing(argv[1]).clean_text()
-    data_tag_DF = BrewModel().brew_tags()
-    data_tag_DF["IsSame"] = (data_tag_DF["Intent"] == data_tag_DF["Doc2Vec_Intent"])
-    data_anomaly_DF = data_tag_DF[data_tag_DF["IsSame"] == True].reset_index(drop=True)
+def aggregate_intent_outlier(data_df):
+    outlier_dict = {}
+    unique_intent_list = list(set(data_df["Intent"]))
+    for intent_key in unique_intent_list:
+        subset_intent_outlier = data_df[data_df["Intent"] == intent_key]
+        outlier_dict["intent_key"] = list(subset_intent_outlier["Query"])
 
+    return outlier_dict
+
+
+def main():
+    # DataProcessing(argv[1]).clean_text()
+    data_tag_DF = BrewModel("data_lake/data.json").brew_tags()
+    data_tag_DF["IsSame"] = (data_tag_DF["Intent"] == data_tag_DF["Doc2Vec_Intent"])
+    outliers_DF = data_tag_DF[data_tag_DF["IsSame"] == True].reset_index(drop=True)
+    agg_outliers_dict = aggregate_intent_outlier(outliers_DF)
+    with open("outlier.json", "w") as outlier_file:
+        json.dump(agg_outliers_dict, outlier_file, indent=4)
 
 if __name__== "__main__":
     main()
