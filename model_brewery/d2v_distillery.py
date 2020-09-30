@@ -4,6 +4,8 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from nltk.tokenize import word_tokenize
 from pyarrow.feather import read_feather
 
+from data_silo.data_processing import DataProcessing
+
 
 class BrewModel():
     def __init__(self):
@@ -35,4 +37,13 @@ class BrewModel():
             # Set it as no decay
             doc2vec_model.min_alpha = doc2vec_model.alpha
         # Save trained Doc2Vec Model for further usage
-        doc2vec_model.save("d2v_intent_clean.model")
+        doc2vec_model.save(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
+
+
+    def brew_score(self, query_text):
+        doc2vec_model = Doc2Vec.load(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
+        processed_sentence = (DataProcessing().normalize(query_text)).split(" ")
+        most_similar_result = doc2vec_model.docvecs.most_similar(
+            positive=[doc2vec_model.infer_vector(processed_sentence)], topn=1)
+        new_intent, intent_similarity_score = most_similar_result[0]
+        return [new_intent, intent_similarity_score]
