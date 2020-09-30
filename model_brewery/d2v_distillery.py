@@ -19,6 +19,12 @@ class BrewModel(DataProcessing):
 
 
     def brew_doc2vec(self):
+        """
+        Tagged documents (in this case, queries) with relative Intent.
+        Build a simple Doc2Vec Model.
+        Save model for further use.
+        """
+
         # Init tagged document list
         tag_doc_list = []
         # Tagged each Query w/ original Intent
