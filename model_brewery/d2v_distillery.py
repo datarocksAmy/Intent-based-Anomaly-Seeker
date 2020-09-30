@@ -10,7 +10,7 @@ from data_silo.data_processing import DataProcessing
 
 class BrewModel(DataProcessing):
     def __init__(self, json_arg):
-        DataProcessing.__init__(json_arg)
+        DataProcessing.__init__(self, json_arg)
         self.clean_query_df = read_feather(f"{getcwd()}/data_lake/clean_query_data.feather")
         self.max_epochs = 20
         self.doc2vec_alpha = 0.025
