@@ -12,7 +12,7 @@ class BrewModel(DataProcessing):
     def __init__(self, json_arg):
         DataProcessing.__init__(self, json_arg)
         self.clean_query_df = read_feather(f"{getcwd()}/data_lake/clean_query_data.feather")
-        self.max_epochs = 20
+        self.max_epochs = 50
         self.doc2vec_alpha = 0.025
         self.doc2vec_min_alpha = 0.025
         self.learning_rate = 0.0002
@@ -27,10 +27,12 @@ class BrewModel(DataProcessing):
 
         # Init tagged document list
         tag_doc_list = []
+        # Random Subset
+        subset_clean_query_df = self.clean_query_df.groupby("Intent").sample(frac=.7).reset_index(drop=True)
         # Tagged each Query w/ original Intent
-        for row_idx in range(len(self.clean_query_df)):
-            tag_doc_list.append(TaggedDocument(words=word_tokenize(self.clean_query_df["Query"][row_idx].lower()),
-                                            tags=[self.clean_query_df["Intent"][row_idx]]))
+        for row_idx in range(len(subset_clean_query_df)):
+            tag_doc_list.append(TaggedDocument(words=word_tokenize(subset_clean_query_df["Query"][row_idx].lower()),
+                                            tags=[subset_clean_query_df["Intent"][row_idx]]))
         # Init simple base Doc2Vec Model
         doc2vec_model = Doc2Vec(epochs=self.max_epochs, alpha=self.doc2vec_alpha, min_alpha=self.doc2vec_min_alpha)
         # Build Vocab w/ Tagged Query - Intent
@@ -45,7 +47,7 @@ class BrewModel(DataProcessing):
             # Set it as no decay
             doc2vec_model.min_alpha = doc2vec_model.alpha
         # Save trained Doc2Vec Model for further usage
-        doc2vec_model.save(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
+        doc2vec_model.save(f"{getcwd()}/model_shelf/d2v_intent_clean50.model")
 
 
     def brew_score(self, query_text):
@@ -57,7 +59,7 @@ class BrewModel(DataProcessing):
         """
 
         # Obtain Trained Doc2Vec Model
-        doc2vec_model = Doc2Vec.load(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
+        doc2vec_model = Doc2Vec.load(f"{getcwd()}/model_shelf/d2v_intent_clean50.model")
         # Process query to clean form and split sentence into words
         processed_sentence = (self.normalize(query_text)).split(" ")
         # Get the top 1 match intent with similarity score through Doc2Vec Model
