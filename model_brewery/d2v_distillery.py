@@ -1,5 +1,6 @@
 from os import getcwd
 
+import pandas as pd
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from nltk.tokenize import word_tokenize
 from pyarrow.feather import read_feather
@@ -46,4 +47,15 @@ class BrewModel():
         most_similar_result = doc2vec_model.docvecs.most_similar(
             positive=[doc2vec_model.infer_vector(processed_sentence)], topn=1)
         new_intent, intent_similarity_score = most_similar_result[0]
+
         return [new_intent, intent_similarity_score]
+
+
+    def brew_tags(self):
+        self.clean_query_df["Doc2Vec_Intent_Score"] = self.clean_query_df["Query"].apply(self.brew_score)
+        self.clean_query_df[["Doc2Vec_Intent", "Doc2Vec_Score"]] = pd.DataFrame(self.clean_query_df
+                                                                                ["Doc2Vec_Intent_Score"].tolist(),
+                                                                                index=self.clean_query_df.index)
+        self.clean_query_df.drop("Doc2Vec_Intent_Score", axis=1, inplace=True)
+
+        return self.clean_query_df
