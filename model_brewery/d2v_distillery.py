@@ -8,9 +8,10 @@ from pyarrow.feather import read_feather
 from data_silo.data_processing import DataProcessing
 
 
-class BrewModel():
-    def __init__(self):
-        self.clean_query_df = read_feather(f"{getcwd()}/clean_query_data.feather")
+class BrewModel(DataProcessing):
+    def __init__(self, json_arg):
+        DataProcessing.__init__(json_arg)
+        self.clean_query_df = read_feather(f"{getcwd()}/data_lake/clean_query_data.feather")
         self.max_epochs = 20
         self.doc2vec_alpha = 0.025
         self.doc2vec_min_alpha = 0.025
@@ -43,7 +44,7 @@ class BrewModel():
 
     def brew_score(self, query_text):
         doc2vec_model = Doc2Vec.load(f"{getcwd()}/model_shelf/d2v_intent_clean.model")
-        processed_sentence = (DataProcessing().normalize(query_text)).split(" ")
+        processed_sentence = (self.normalize(query_text)).split(" ")
         most_similar_result = doc2vec_model.docvecs.most_similar(
             positive=[doc2vec_model.infer_vector(processed_sentence)], topn=1)
         new_intent, intent_similarity_score = most_similar_result[0]
@@ -52,10 +53,11 @@ class BrewModel():
 
 
     def brew_tags(self):
-        self.clean_query_df["Doc2Vec_Intent_Score"] = self.clean_query_df["Query"].apply(self.brew_score)
-        self.clean_query_df[["Doc2Vec_Intent", "Doc2Vec_Score"]] = pd.DataFrame(self.clean_query_df
+        original_json_df = self.retrieve_process_json()
+        original_json_df["Doc2Vec_Intent_Score"] = original_json_df["Query"].apply(self.brew_score)
+        original_json_df[["Doc2Vec_Intent", "Doc2Vec_Score"]] = pd.DataFrame(original_json_df
                                                                                 ["Doc2Vec_Intent_Score"].tolist(),
-                                                                                index=self.clean_query_df.index)
-        self.clean_query_df.drop("Doc2Vec_Intent_Score", axis=1, inplace=True)
+                                                                                index=original_json_df.index)
+        original_json_df.drop("Doc2Vec_Intent_Score", axis=1, inplace=True)
 
-        return self.clean_query_df
+        return original_json_df
