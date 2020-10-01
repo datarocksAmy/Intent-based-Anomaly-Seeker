@@ -13,7 +13,7 @@ List of lists within a json file in the form of - `[ Query , Class ]`
 - Total Number of Classes : 150
 - Total Number of Queries per Class : 150
 
-For Example, data.json would look like this:
+For Example, data would look like this:
 <br>
 
 ```python
