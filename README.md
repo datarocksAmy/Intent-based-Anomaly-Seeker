@@ -1,5 +1,5 @@
 # Intent-based Anomaly Seeker
-***
+
 ## Project Overview
 Find outlier/anomaly for multi-class intents using simple Doc2Vec.
 
