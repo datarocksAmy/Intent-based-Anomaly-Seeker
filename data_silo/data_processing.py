@@ -31,7 +31,6 @@ class DataProcessing:
 
             return self.data_df
 
-
     def normalize(self, row):
         """
         Pre-processing query strings.
@@ -64,7 +63,6 @@ class DataProcessing:
         clean_text = " ".join(non_numerical_row)
 
         return clean_text
-
 
     def clean_text(self):
         """
