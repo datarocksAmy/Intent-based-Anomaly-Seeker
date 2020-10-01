@@ -112,28 +112,52 @@ class BrewSnips:
 
     def get_nlu_engine(self):
         """
+        Get JSON file with our intents and entities tag from part of our input data.
+        Update the Snips NLU Engine.
 
-        :return:
+        :return:    ( Snips NLU Object ) Customized Snips NLU Engine
         """
+
+        # Get parsed intent ngram JSON file
         with io.open(f"{getcwd()}/data_lake/intent_ngram.json") as f:
             sample_dataset = json.load(f)
+        # Init Snips NLU Engine
         self.nlu_engine = SnipsNLUEngine(config=CONFIG_EN)
+        # Fit sample data into NLU Engine for customization
         self.nlu_engine = self.nlu_engine.fit(sample_dataset)
+
         return self.nlu_engine
 
     def parse_intent_name_prob(self, text):
-        self.get_nlu_engine()
+        """
+        Parse New IntentName and Probability based on customized Snips NLU Engine.
+
+        :param text:    ( String ) Query
+        :return:        ( List ) Intent Name and Probability Score
+        """
+
+        # Parse queries to determine intent name and probability score
         parsing = self.nlu_engine.parse(text)
-        intent_name = (parsing["intent"]["intentName"])
-        intent_prob = (parsing["intent"]["probability"])
+        # Get intent name
+        intent_name = parsing["intent"]["intentName"]
+        # get the probability
+        intent_prob = parsing["intent"]["probability"]
+
         return [intent_name, intent_prob]
 
-
     def brew_intent_score(self):
+        """
+        Generate new intent name and probability score for each query.
+        Parse them into JSON format and write into a JSON file.
+        """
+
+        # Get Customized Snips NLU Engine
+        self.get_nlu_engine()
+        # Get the original json data
         with io.open(f"{getcwd()}/data_lake/data.json") as f:
             data_df = json.load(f)
+            # Convert list of lists into DataFrame w/ relative columns
             data_content_df = pd.DataFrame(data_df, columns=["Query", "Intent"])
-            print(data_content_df.head())
             # Set Intent Similarity Score w/ New Intent
             data_content_df["NLU_Intent_Score"] = data_content_df["Query"].apply(self.parse_intent_name_prob)
             # Split into individual columns : Intent and Score
