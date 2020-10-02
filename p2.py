@@ -45,16 +45,18 @@ def aggregate_intent_outlier():
     outlier_dict = {}
     # Get Intent Tags + relative probabilities from feather
     snips_intent_data = read_feather(f"{getcwd()}/data_lake/SnipsNLUData.feather")
+    snips_intent_diff_tag = snips_intent_data[(snips_intent_data["Intent"] != snips_intent_data["NLU_Intent"])]
     # Get the list of unique Intents
-    unique_intent_list = list(set(snips_intent_data["Intent"]))
-    # Group by Intent w/ Doc2Vec Score below threshold
+    unique_intent_list = list(set(snips_intent_diff_tag["Intent"]))
+    # Group by Intent w/ NLU Score above threshold
     for intent_key in unique_intent_list:
         subset_intent_outlier = snips_intent_data[(snips_intent_data["Intent"] == intent_key) &
-                                                  (snips_intent_data["NLU_Score"] < 0.6)]
-        # Get the list of possible outlier queries
-        outlier_dict[intent_key] = list(subset_intent_outlier["Query"])
+                                                  (snips_intent_data["NLU_Score"] > 0.95)]
+        if not subset_intent_outlier.empty:
+            # Get the list of possible outlier queries
+            outlier_dict[intent_key] = list(subset_intent_outlier["Query"])
     # Dump result to JSON file
-    with open("outlier.json", "w") as outlier_file:
+    with open(f"{getcwd()}/data_lake/outlier.json", "w") as outlier_file:
         json.dump(outlier_dict, outlier_file, indent=4)
 
 
