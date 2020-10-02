@@ -1,0 +1,794 @@
+{
+    "change_ai_name": [
+        "rename yourself to betty",
+        "can i call you betty",
+        "rename bob to betty",
+        "can i call you dave",
+        "can i call you james instead"
+    ],
+    "flip_coin": [
+        "i want you to flip a fair sided coin",
+        "are you able to flip a two sided coin",
+        "flip a coin heads or tails",
+        "flip a coin; i say tails",
+        "flip the coin",
+        "flip that coin please, i choose heads",
+        "i choose heads, now flip that coin",
+        "i want you to flip a coin",
+        "i ned you to flip a coin",
+        "i want a coin flip",
+        "i require a coin flip",
+        "coin flip",
+        "flip a coin, you win with heads",
+        "perform a coin flip",
+        "flip a normal coin",
+        "flip a heads or tails coin i pick heads",
+        "flip a coin, i choose heads",
+        "can you flip a coin i pick heads",
+        "i need you to flip a coin",
+        "i wanna flip a coin",
+        "i'm wanting you to flip a coin",
+        "let's flip a coin i choose heads",
+        "flip a coin i choose heads",
+        "flip a coin i'm calling heads",
+        "i want you to flip a coin i choose heads",
+        "heads, coin flip",
+        "flip coin, heads!",
+        "flip a coin, i call heads!",
+        "coin flip, choose heads",
+        "please flip a coin, i choose heads!",
+        "flip a coin, i'm heads",
+        "flip a coin, heads",
+        "flip us a coin, i call heads",
+        "flip a coin, you're tails and i'm heads",
+        "flip the coin, i choose heads"
+    ],
+    "measurement_conversion": [
+        "convert 2 cups to liters"
+    ],
+    "date": [
+        "what day is it",
+        "what is the day",
+        "what is the date tomorrow",
+        "what is the date tomorrow, please",
+        "what is today",
+        "what is the current day",
+        "what is the day now"
+    ],
+    "smart_home": [
+        "set my oven to 350 please",
+        "set the oven temperature to 350"
+    ],
+    "share_location": [
+        "share my location with ben and jerry"
+    ],
+    "meeting_schedule": [
+        "do i have meetings scheduled today",
+        "meetings today",
+        "do i have any meetings scheduled today"
+    ],
+    "new_card": [
+        "application for a mastercard"
+    ],
+    "ingredients_list": [
+        "i\u2019m making spaghetti what ingredients do i need",
+        "i am making broccoli cheddar soup, what ingredients do i need",
+        "in making an omelette, what ingredients do i need",
+        "in terms of making scrambled eggs, what ingredients do i need",
+        "i want to know the ingredients for making pizza"
+    ],
+    "definition": [
+        "what is an ataraxy",
+        "what does the word ataraxy mean",
+        "what does ataraxy mean",
+        "find what the word diaphanous mean please",
+        "what does the word abjure mean",
+        "what does the word polynomial mean",
+        "what does ferrari mean"
+    ],
+    "repeat": [
+        "one more time please",
+        "just one more time"
+    ],
+    "card_declined": [
+        "i need to know why my card was declined",
+        "i tried using my card at chipotle yesterday and it was declined; why",
+        "i wonder why my card got declined yesterday",
+        "why was my card declined",
+        "my card was declined yesterday, why",
+        "tell me why was my card declined at the zoo",
+        "why did my card get declined at the dentist office",
+        "at target trying to buy a mug and my card was declined",
+        "i was at home depot trying to buy plants and my card got declined",
+        "i need to know why my card declined yesterday",
+        "i was at target trying to buy candles and my card got declined",
+        "find out why my card declined yesterday",
+        "why was my card declined yesterday",
+        "i was at zales trying to buy a ring and my card got declined",
+        "i was at macys trying to buy shoes and my card got declined",
+        "my card declined yesterday and i want to know why",
+        "tell me why my card was declined yesterday",
+        "so why was my card declined yesterday",
+        "let me know why my card was declined yesterday",
+        "i wanna know why my card was declined",
+        "i was trying to buy qtips at walmart and my card got declined",
+        "i was at costco trying to buy groceries and my card got declined",
+        "my card was declined at the casino and i'm wondering why",
+        "i was at safeway trying to buy groceries and my card got declined",
+        "i was at whole foods trying to buy groceries and my card got declined",
+        "i was at costco trying to buy sheets and my card got declined",
+        "yesterday, my card was declined",
+        "i don't understand why walgreens declined my card",
+        "i don't understand why my card was declined yesterday",
+        "why was my card declined at safeway",
+        "i was at walmart trying to buy toilet paper and my card got declined",
+        "target declined my card and i don't know why",
+        "i can't figure out why my card was declined at target",
+        "i was just at target and they declined my card and i can't understand why",
+        "my card got declined; why",
+        "why did my card get declined at public when i was trying to buy food",
+        "my card declined"
+    ],
+    "credit_limit": [
+        "my visa has what limit"
+    ],
+    "restaurant_reviews": [
+        "does outback steakhouse have good reviews",
+        "does pizza hut have good reviews",
+        "do people like chipotle",
+        "does longhorn steakhouse have good reviews",
+        "does ihop have good reviews",
+        "does applebees have good reviews",
+        "does cielo have good reviews",
+        "does olive garden have good customer reviews",
+        "does olive garden have good reviews"
+    ],
+    "credit_limit_change": [
+        "can i raise the limit to 500 dollars",
+        "can i increase my credit limit to 500 dollars",
+        "can i increase my credit limit to 700 dollars",
+        "can i increase my credit limit to 1100 dollars",
+        "can my credit limit be increased to one thousand dollars",
+        "can my credit limit be increased by 500 dollars"
+    ],
+    "what_song": [
+        "what is this song",
+        "can you tell me this song",
+        "name this song, please",
+        "name this song"
+    ],
+    "travel_alert": [
+        "any travel alerts for south korea",
+        "any travel alerts for canada"
+    ],
+    "change_language": [
+        "please respond to me in spanish",
+        "can you speak to me in french",
+        "can you speak to me in chinese",
+        "can you speak in french",
+        "please respond in english",
+        "please speak to me in chinese",
+        "speak in german",
+        "speak to me in dutch",
+        "speak in french please",
+        "speak in dutch"
+    ],
+    "application_status": [
+        "has my application for the mastercard card gone through",
+        "has my credit card application gone through",
+        "has my card application successfully gone through",
+        "has my application for american express gone through yet"
+    ],
+    "cancel": [
+        "can you be quiet please",
+        "please be quiet",
+        "please cancel that last command",
+        "can you cancel",
+        "please cancel your present task",
+        "stop talking please",
+        "cancel action",
+        "please cancel the input",
+        "please be quiet now",
+        "please cancel that last task",
+        "cancel that",
+        "cancel that input",
+        "cancel that last command",
+        "can you switch off",
+        "can you stop speaking",
+        "can you please cancel",
+        "can you end the task",
+        "quit talking",
+        "cancel",
+        "i repeat cancel",
+        "stop this process",
+        "just stop talking",
+        "please stop talking",
+        "stop the process",
+        "stop talking",
+        "you can cancel the task",
+        "can you cancel that",
+        "can you cancel that request",
+        "can you cancel that request, please",
+        "can you cancel that, please",
+        "be quiet",
+        "stop speaking"
+    ],
+    "greeting": [
+        "hey hey!",
+        "hello, ai",
+        "hey, ai",
+        "yo",
+        "hi ai",
+        "how's ife treating you",
+        "hi, ai",
+        "hey",
+        "hi",
+        "hello",
+        "is everything ok today",
+        "hi there, how are you doing"
+    ],
+    "no": [
+        "i must say no",
+        "that would be a no",
+        "no that is not right",
+        "no, that is not right",
+        "the information is wrong",
+        "that is not right",
+        "the answer is false",
+        "that would be \"no",
+        "that would be false",
+        "the statement is false"
+    ],
+    "change_volume": [
+        "raise the volume",
+        "lower the volume",
+        "please increase volume",
+        "raise volume",
+        "increase volume",
+        "lower volume",
+        "please raise volume",
+        "decrease volume",
+        "could you increase the speaker volume please",
+        "increase the speaker volume please",
+        "volume to 4",
+        "increase the volume",
+        "volume 4 set"
+    ],
+    "bill_balance": [
+        "i need to know my bill total for my verizon payment due this month"
+    ],
+    "pto_balance": [
+        "check days of pto"
+    ],
+    "how_busy": [
+        "how busy will panera be at noon"
+    ],
+    "taxes": [
+        "how much will i pay in state taxes",
+        "tell me how much my state taxes amount to"
+    ],
+    "yes": [
+        "do that",
+        "ok"
+    ],
+    "oil_change_how": [
+        "i want a lesson on changing my oil"
+    ],
+    "w2": [
+        "where do i get the form i need for taxes",
+        "where can i get the form i need to do my taxes",
+        "where can i get the employment form i need to do my taxes",
+        "where can i get the form for my taxes"
+    ],
+    "sync_device": [
+        "unsync my phone now please",
+        "unsync my phone",
+        "please unsync my phone",
+        "quickly disconnect the phone",
+        "sync phone"
+    ],
+    "text": [
+        "text roderick and tell him im running late",
+        "send text message to",
+        "compose text message",
+        "send a text message to alice",
+        "text alice",
+        "text my wife and tell her i'm divorcing her",
+        "write text message to someone",
+        "text someone",
+        "send a text message",
+        "text joe",
+        "send joe a text",
+        "text mom saying happy birthday",
+        "message carl, you suck",
+        "text mike, \"i'm running late",
+        "text emily",
+        "text steve and tell him i am running late"
+    ],
+    "are_you_a_bot": [
+        "may i know if you are a real person or an ai",
+        "i need to know if you are a real person or an ai",
+        "i want to know if you are a real person or an ai",
+        "tell me if you are a real person or an ai",
+        "are you a human or a bot",
+        "are you a real human",
+        "are you a real person or an ai",
+        "so are you a real person",
+        "so are you human",
+        "so are you a bot",
+        "are you an ai or a real person",
+        "so are you real",
+        "are you a human",
+        "are you a computer or a real person",
+        "are you a computer, or are you a real person",
+        "are you a computer",
+        "are you human or a bot",
+        "are you a real person or a computer",
+        "are you a person",
+        "are you a real human being",
+        "are you ai",
+        "are an an ai",
+        "are you a real person or a bot",
+        "are you a bot or a real person",
+        "are you a human being or a computer",
+        "are you a robot",
+        "are you real",
+        "is this a bot",
+        "could you be human",
+        "are you human",
+        "are you a human or ai computer based",
+        "are you real or a computer"
+    ],
+    "make_call": [
+        "phone lobby",
+        "please dial david now",
+        "please phone lizzy",
+        "phone christie",
+        "dial sarah",
+        "phone sarah",
+        "dial steven",
+        "phone steven",
+        "i should call ruthie",
+        "siri, call jacob"
+    ],
+    "apr": [
+        "what is my apr"
+    ],
+    "next_song": [
+        "can you move to the next song",
+        "move to the next song",
+        "can we move onto the next song",
+        "move forward one song",
+        "skip ahead one song"
+    ],
+    "ingredient_substitution": [
+        "can i use water instead of milk",
+        "can i use milk instead of cream",
+        "can i use sour cream instead of milk",
+        "can i substitute milk for water",
+        "can i substitute cream for milk",
+        "can i use almond milk instead of rice milk",
+        "can i use pasta sauce instead of tomato paste"
+    ],
+    "update_playlist": [
+        "add creep by radio head to the playlist",
+        "please add someday by the strokes to my playlist",
+        "add to my playlist smooth operator by sade",
+        "add the next song to my playlist - broken by evanescence",
+        "add broken by evanescence to my playlist",
+        "will you please add cannons by phil wickham to my playlist",
+        "let's add wonder by hillsong united to my playlist",
+        "please add roar by katy perry to my playlist",
+        "please add the immigrant song by led zeppelin to my playlist",
+        "add the thong song by cisqo to my playlist, please",
+        "add one by metallica to my playlist",
+        "add welcome to the jungle by guns n roses to my playlist",
+        "add this song to shared playlist",
+        "add single ladies by beyonce to my pop playlist",
+        "add psycho by post malone to my playlist",
+        "add i like it by cardi b to my playlist",
+        "add ruby soho by rancid to my playlist",
+        "can you add passionfruit by yaeji to my playlist",
+        "add song to media playlist",
+        "add the song rap god to the motivational playlist",
+        "add this to my rock playlist"
+    ],
+    "account_blocked": [
+        "why is there a hold on my american saving bank account",
+        "why is my bank account locked",
+        "why did my bank place a hold on my bank account"
+    ],
+    "bill_due": [
+        "when's the gas bill due",
+        "is my bill due this week",
+        "how many more days before my verizon bill is due",
+        "i cant remember when my bill is due",
+        "when is my bill due",
+        "give me the date my bill is due",
+        "how soon before my catering bill is due",
+        "when's my heater bill due",
+        "when is my mortgage payment due",
+        "when is my at&t bill due",
+        "when's the ac bill due",
+        "when is the bill due",
+        "when is my water bill due",
+        "when is my electric bill due",
+        "when is my kaiser bill due",
+        "is the bill due this week",
+        "i need to know when my water bill is due",
+        "i need to know when my electricity bill is due",
+        "is the bill due today",
+        "is the bill due",
+        "tell me when my water bill is due"
+    ],
+    "time": [
+        "what is the time",
+        "what is the time now",
+        "now what is the time",
+        "time in tokyo",
+        "can you tell me the time",
+        "what is the time, please",
+        "please tell me the time",
+        "time in manhattan",
+        "the time is what"
+    ],
+    "user_name": [
+        "what can you call me",
+        "what will you call me",
+        "my name is what",
+        "you call me what"
+    ],
+    "roll_dice": [
+        "will you roll a 12 sided dice",
+        "i need to roll a 10 sided die",
+        "please roll a 7 sided die",
+        "can you roll a fair, 6 sided die",
+        "roll a 7 sided dice",
+        "please roll a 6 sided dice",
+        "roll a 6 sided die",
+        "will you roll a 6 sided dice",
+        "will you roll a 3 sided dice",
+        "will you roll a 5 sided dice",
+        "will you roll a 2 sided dice",
+        "could you roll a 6 sided dice",
+        "can you roll a 6 sided dice",
+        "can you roll the 12 sided dice please",
+        "please roll the 10 sided dice",
+        "please roll the 5 sided dice",
+        "6 sided dice roll",
+        "roll 6 sided die",
+        "roll die, 6 sided",
+        "roll a die with 6 sides",
+        "roll a pair of six sided dice",
+        "can you roll a 4 sided dice",
+        "roll a 6 sided die and tell me the result",
+        "roll a 10 sided dice",
+        "roll an 8 sided dice",
+        "roll a 6 sided dice",
+        "please roll this 8 sided dice",
+        "i need a roll on a 6 sided dice",
+        "i need a dice roll for a six sided die",
+        "roll the five sided die",
+        "please roll twelve sided dice",
+        "roll a 9 sided dice",
+        "roll five sided dice"
+    ],
+    "credit_score": [
+        "say my credit score",
+        "i want my credit score",
+        "i need my credit score"
+    ],
+    "jump_start": [
+        "my battery died in my car, how can i jump start a battery",
+        "how do i jump start a battery",
+        "my car is dead, what do i need to jump start it",
+        "do i need cables to jump start my car",
+        "tell me how to jump start my own car battery",
+        "i need diy info about jump starting my dead car battery",
+        "how do i jump start the car",
+        "how do i jump my car",
+        "how do i jump start my battery",
+        "how do i start my car battery",
+        "what do i do to jump start my battery",
+        "i need instructions on how to jump start my car",
+        "how do i jump start my car battery",
+        "tell me how to jump start my dead battery",
+        "i need to jump start my car what do i do",
+        "what do i do to jump start my car",
+        "how can i jump start my car if my battery is dead",
+        "what do i need to jump start a battery",
+        "how do i jump start a bad battery",
+        "how do i do a jump start on my car",
+        "how do i jump start my car",
+        "i really need to jump start my car",
+        "i gotta jump start my car"
+    ],
+    "thank_you": [
+        "thanks for helping out"
+    ],
+    "who_made_you": [
+        "who brought you up",
+        "tell me who made you",
+        "who developed your actions",
+        "who made this ai",
+        "who was your programmer",
+        "who made the ai",
+        "who makes the ai",
+        "who made you ai",
+        "can you tell me who created you",
+        "who is your manufacturer",
+        "who made you",
+        "who was your maker",
+        "tell me who made you please",
+        "can you tell me who made you"
+    ],
+    "restaurant_suggestion": [
+        "find me an asian restaurant",
+        "find an indian restaurant",
+        "can you suggest a french restaurant",
+        "can you suggest a thai restaurant",
+        "can you suggest a french restaurant, please",
+        "can you suggest a thai restaurant, please"
+    ],
+    "lost_luggage": [
+        "i'm having trouble finding my luggage i was on delta flight ab123 out of new york",
+        "i miss placed my luggage i was on delta flight ab123 out of new york",
+        "my luggage is lost i was on delta flight ab123 out of new york",
+        "where is my luggage, i was on delta flight ab123 out of dc",
+        "i need my luggage found, i was on delta flight ab123 out of san francisco"
+    ],
+    "change_speed": [
+        "can you talk slower please",
+        "talk slower, please",
+        "slow down your speech",
+        "slow down your talking",
+        "speak more quickly, please",
+        "can you slow down",
+        "slow down",
+        "can you please slow down",
+        "can you please talk faster",
+        "can you slow down your speech",
+        "speed up your talking please",
+        "can you please talk slower",
+        "can you talk a bit slower please",
+        "can you please not talk so fast",
+        "please stop talking so fast",
+        "can you speak more slowly",
+        "please talk a bit faster",
+        "can you permanently talk faster",
+        "please talk faster",
+        "can you talk faster",
+        "speed up your talking",
+        "talk faster",
+        "can you not talk so fast",
+        "speak more quickly"
+    ],
+    "find_phone": [
+        "misplaced my phone",
+        "locate my phone"
+    ],
+    "tire_change": [
+        "when should i replace my tires next if i last replaced them on the 1st",
+        "i replaced my tires on may 2, so when should i replace them next",
+        "if i replaced my tires on labor day, when should i next replace them",
+        "if i replaced my tires on christmas eve, when will i need to replace them again",
+        "when will i need to replace my tires if i last replaced them on december 20",
+        "when should i replace my tires next, if i replaced them on january 15, 2018",
+        "when should i replace my tires if i replaced them last year",
+        "tell me when i need to replace my tires, if i replaced them on october 1, 2017",
+        "i replaced my tires in december, when should i replace them again",
+        "i need to know when i should replace my tires next if i last replaced them on june 2",
+        "when do my tires need changing after i replaced them last week"
+    ],
+    "accept_reservations": [
+        "does redrobin take reservations",
+        "does cielo take reservations",
+        "does marios in brooklyn take reservations",
+        "does sidetracks take reservations",
+        "does black rock take reservations",
+        "does buffalo wild wings do reservations",
+        "does minnies cafe in modesto take reservations",
+        "does bjs take reservations",
+        "does arbys in lakewood take reservations",
+        "does minnis take reservations",
+        "does black bear diner in tracy take reservations",
+        "does chillis take reservations",
+        "does tartine in san francisco take reservations",
+        "does cowgirl creamery in san francisco take reservations",
+        "does nopa in san francisco take reservations",
+        "does bar tartine in san francisco take reservations",
+        "does pizzeria delfina in san francisco take reservations",
+        "does the zen garden in la take reservations",
+        "does olive garden take reservations",
+        "does applebees do reservations",
+        "does applebees take reservations",
+        "does osteria francescana take reservations"
+    ],
+    "report_fraud": [
+        "i saw suspicious activity on my bank account"
+    ],
+    "change_accent": [
+        "try a male voice",
+        "could you talk like a british male",
+        "do a british male accent only",
+        "i want to hear a male british accent",
+        "switch to british male accent",
+        "i need a new accent male british",
+        "switch to male british accent",
+        "i want the male voice"
+    ],
+    "play_music": [
+        "play hey jude",
+        "play music by the beatles",
+        "play beatles",
+        "can you play elvis",
+        "can you play music by the beatles",
+        "can you play the beatles"
+    ],
+    "timer": [
+        "please set a timer for 6 minutes",
+        "set a timer for 5 minutes",
+        "i want a timer set",
+        "set a timer for me",
+        "i gotta set a timer",
+        "set a 10 minute timer",
+        "i must set a timer",
+        "set a timer for twelve seconds",
+        "set a timer for fifteen seconds",
+        "set a timer for two minutes",
+        "can you set a timer for two minutes",
+        "\"can u set a timer for 5 minutes",
+        "set a one hour timer",
+        "set a five minute timer please",
+        "set a timer for two hours",
+        "i need a timer set for 15 minutes",
+        "set a timer for 15 minutes",
+        "set a timer for 35 minutes",
+        "i need a timer for 20 seconds",
+        "10 minute timer",
+        "set a one minute timer",
+        "set a five minute timer",
+        "set a seven minute timer",
+        "set a four minute timer",
+        "set a six minute timer",
+        "timer for 5 minutes",
+        "set timer for 5 minutes",
+        "set 30 minute timer",
+        "set the timer for 10 minutes",
+        "set a 4 minute timer",
+        "set a 2 minute timer",
+        "set a 5 minute timer",
+        "set a 1 minute timer",
+        "set a timer",
+        "i want a timer set for 10 minutes",
+        "set a timer for 10 minutes",
+        "set a timer for 30 minutes",
+        "set a timer for 5 minutes from now"
+    ],
+    "next_holiday": [
+        "what is the next holiday"
+    ],
+    "what_are_your_hobbies": [
+        "any hobbies"
+    ],
+    "translate": [
+        "find the outliers!"
+    ],
+    "calculator": [
+        "can you multiply 45 by 23"
+    ],
+    "who_do_you_work_for": [
+        "who is your employeer",
+        "you work for who",
+        "your boss is who",
+        "are you now working for me",
+        "are you working for me",
+        "are you employed by me",
+        "who do you report to"
+    ],
+    "what_is_your_name": [
+        "your name is",
+        "and your name is"
+    ],
+    "insurance": [
+        "define my health benefits",
+        "what are my health insurance benefits"
+    ],
+    "transfer": [
+        "transfer two hundred dollars between my portfolio and my money market account",
+        "transfer $500 from my money market savings account to my checking account",
+        "send my money between accounts",
+        "transfer money to another account",
+        "requesting money transfer between accounts",
+        "i need to transfer one thousand dollars to my savings account from my checking",
+        "transfer 50 dollars from my checking account to my money market account"
+    ],
+    "weather": [
+        "weather in costa mesa"
+    ],
+    "goodbye": [
+        "enjoy your day, goodbye"
+    ],
+    "calendar_update": [
+        "clear my calendar for this friday",
+        "clear my calendar for tomorrow",
+        "clear my calendar for november 11th"
+    ],
+    "traffic": [
+        "is the traffic typically bad at noon on the route to the hopsital"
+    ],
+    "change_user_name": [
+        "my name is brad",
+        "my name is steve",
+        "my name is john",
+        "my name is jim",
+        "john is my name",
+        "my name is jason",
+        "jason is my name",
+        "my name is nick",
+        "the name is nick",
+        "bob is my name now",
+        "please start calling me bob"
+    ],
+    "alarm": [
+        "set alarm for 5 am"
+    ],
+    "nutrition_info": [
+        "how healthy are french fries"
+    ],
+    "rollover_401k": [
+        "can a 401k be rolled over"
+    ],
+    "rewards_balance": [
+        "my starbucks rewards balance is"
+    ],
+    "pto_request_status": [
+        "the status of my day off request, please",
+        "tell me the status of my day off request",
+        "any status update on my day off request",
+        "what is the day off request status",
+        "tell me status of my day off request"
+    ],
+    "gas_type": [
+        "what type of gas does the car use",
+        "what type of gas do i need to use in this car",
+        "what type of gas does this car need",
+        "what kind of gas should i use to fill the car",
+        "what kind of fuel should i use to fill the car",
+        "what kind of gas should i put in this car",
+        "what gas does the car use",
+        "what type of gas does my car use",
+        "what type of gas does this car take",
+        "what sort of fuel should i use for this car",
+        "what kind of gas does this car take",
+        "should i use premium gas with this car",
+        "what kind of gas does this car use",
+        "what type of fuel should i use in my car",
+        "which gas type does this car take",
+        "does this car need high octane gas",
+        "what kind of gas does this car need",
+        "what kind of gas should i put into this car",
+        "what is the best type of gas for this car",
+        "for this car, what kind of gas should i use",
+        "gas type needed for this car",
+        "what type of gas should i use",
+        "what fuel should i use for this car",
+        "what kind of gas should i use for this car",
+        "what gas does this car use",
+        "what type of fuel does this car utilize",
+        "what type of gas do i use in this car"
+    ],
+    "routing": [
+        "i need the routing number for my woodlawn account",
+        "display the routing number for account huntington"
+    ],
+    "pay_bill": [
+        "pay my water bill with my charles schwab account",
+        "pay my internet bill with my discover account",
+        "pay my light bill"
+    ],
+    "what_can_i_ask_you": [
+        "what can i ask you",
+        "what can you do"
+    ]
+}
