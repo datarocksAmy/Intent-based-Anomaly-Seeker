@@ -30,25 +30,27 @@ import json
 from os import getcwd
 from sys import argv
 
-from data_silo.data_processing import DataProcessing
-from model_brewery.d2v_distillery import BrewModel
+from pyarrow.feather import read_feather
+
+from model_brewery.snips_distilliery import BrewSnips
 
 
-def aggregate_intent_outlier(data_df):
+def aggregate_intent_outlier():
     """
-    Group Query by Intent + Doc2Vec Score below score to indicate possible anomaly.
+    Group Query by Intent + Intent Score below score to indicate possible anomaly.
     Dump into json file as the final step.
-
-    :param data_df:     ( DataFrame ) Data of Doc2Vec Intent not the same as Original Intent
     """
 
     # Init Outlier Dictionary
     outlier_dict = {}
+    # Get Intent Tags + relative probabilities from feather
+    snips_intent_data = read_feather(f"{getcwd()}/data_lake/SnipsNLUData.feather")
     # Get the list of unique Intents
-    unique_intent_list = list(set(data_df["Intent"]))
+    unique_intent_list = list(set(snips_intent_data["Intent"]))
     # Group by Intent w/ Doc2Vec Score below threshold
     for intent_key in unique_intent_list:
-        subset_intent_outlier = data_df[(data_df["Intent"] == intent_key) & (data_df["Doc2Vec_Score"] < 0.6)]
+        subset_intent_outlier = snips_intent_data[(snips_intent_data["Intent"] == intent_key) &
+                                                  (snips_intent_data["NLU_Score"] < 0.6)]
         # Get the list of possible outlier queries
         outlier_dict[intent_key] = list(subset_intent_outlier["Query"])
     # Dump result to JSON file
@@ -57,19 +59,11 @@ def aggregate_intent_outlier(data_df):
 
 
 def main():
-    # Input JSON data
-    incoming_json_data = f"{getcwd()}/data_lake/{argv[1]}"
-    # Pre-process texts
-    DataProcessing(incoming_json_data).clean_text()
-    # Build Doc2Vec Model
-    BrewModel(incoming_json_data).brew_doc2vec()
-    # Assign New Intents to original data with scores
-    data_tag_DF = BrewModel(incoming_json_data).brew_tags()
-    # Get the queries w/ a different tag being assigned by Doc2Vec
-    outliers_DF = data_tag_DF[data_tag_DF["Intent"] != data_tag_DF["Doc2Vec_Intent"]].reset_index(drop=True)
-    # Aggregate potential outlier queries with score less than 0.4
-    aggregate_intent_outlier(outliers_DF)
+    # Pass in input data to generate NLU intent and entities
+    BrewSnips(argv[1]).brew_intent_score()
+    # Generate outlier json file by intent
+    aggregate_intent_outlier()
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
