@@ -18,8 +18,9 @@ from data_silo.data_processing import DataProcessing
 
 
 class BrewSnips:
-    def __init__(self):
+    def __init__(self, json_arg):
         self.nlu_engine = None
+        self.json_arg = json_arg
 
     def simple_text_cleaner(self, query_text):
         """
@@ -50,7 +51,7 @@ class BrewSnips:
         """
 
         # Get original data.json in DataFrame
-        data_df = DataProcessing(f"{getcwd()}/data_lake/data.json").retrieve_process_json()
+        data_df = DataProcessing(f"{getcwd()}/data_lake/{self.json_arg}").retrieve_process_json()
         # Get list of Unique Intents
         intent_list = list(set(data_df["Intent"]))
         # Load SpaCy NLP Large Corpus
@@ -158,7 +159,7 @@ class BrewSnips:
         # Get Customized Snips NLU Engine
         self.get_nlu_engine()
         # Get the original json data
-        with io.open(f"{getcwd()}/data_lake/data.json") as f:
+        with io.open(f"{getcwd()}/data_lake/{self.json_arg}") as f:
             data_df = json.load(f)
             # Convert list of lists into DataFrame w/ relative columns
             data_content_df = pd.DataFrame(data_df, columns=["Query", "Intent"])
