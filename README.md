@@ -4,7 +4,7 @@
 Find outlier/anomaly for multi-class intents using Snips NLU.
 
 ## Project Purpose
-This is intend for a code challenge! Still lots of space to improve.
+This is intend for a code challenge! Still lots of space to improve. <br>
 Since it is more of a natural language understanding - e.g. chatbot, voiced-base conversation... problem, I decided to go with Snips NLU.
 
 ## Data Summary
@@ -22,16 +22,6 @@ For Example, data would look like this:
   ... 
 ]
 ```
-
-## Process Overview
-Started out going down the path as a pure NLP approach - remove punctuations, tokenization, lemmization, stemming, then extract weighted features through TF-IDF. <br>
-I then throw these featuers into Doc2Vec and thought I can get a reasonable classification. <br>
-However, it fails to work for the need of identifying "intents" behind natural languages and goes heavily toward the frequency of a word being used.
-This will definitely help with identifying keywords in a broader perspective, but not so much to a broader spectrum like the intention behind it.
-<br>
-This is the moment I dicovered Snips NLU ( and a similar package called [Rasa NLU](https://rasa.com/).
-Open sources specialized for contexual and natural language understanding!
-
 
 ## Requirements
 Install require packages:
@@ -54,3 +44,6 @@ python p2.py data.json
 ```
 
 
+## Wiki
+Documentation on overview, approaches, how Snips NLU fits into tackling this challenge. <br>
+See [here](https://github.com/datarocksAmy/Intent-based-Anomaly-Seeker/wiki) for more details.
