@@ -1,5 +1,6 @@
 import json
 import string
+from os import getcwd
 
 import pandas as pd
 from nltk import sent_tokenize, word_tokenize
@@ -77,4 +78,4 @@ class DataProcessing:
         # Normalized Query strings
         self.data_df["Query"] = self.data_df["Query"].apply(self.normalize)
         # Write cleaned query data with corresponding intent into feather file
-        write_feather(self.data_df, "clean_query_data.feather")
+        write_feather(self.data_df, f"{getcwd()}/data_lake/clean_query_data.feather")
