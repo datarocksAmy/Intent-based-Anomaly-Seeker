@@ -65,8 +65,7 @@ class BrewSnips:
             # yes and no are reserved values for yaml file.
             # To avoid parsing error, "_" is added before the intent name.
             if intent_name == "yes" or intent_name == "no":
-                replacement_intent = ""
-                intent_dict = {"type": "intent", "name": f"_{replacement_intent}"}
+                intent_dict = {"type": "intent", "name": f"{intent_name}s"}
             else:
                 intent_dict = {"type": "intent", "name": intent_name}
             # Init Lists for Slots + Utterances
@@ -125,11 +124,11 @@ class BrewSnips:
 
         # Get parsed intent ngram JSON file
         with io.open(f"{getcwd()}/data_lake/intent_ngram.json") as f:
-            sample_dataset = json.load(f)
+            custom_dataset = json.load(f)
         # Init Snips NLU Engine
         self.nlu_engine = SnipsNLUEngine(config=CONFIG_EN)
         # Fit sample data into NLU Engine for customization
-        self.nlu_engine = self.nlu_engine.fit(sample_dataset)
+        self.nlu_engine = self.nlu_engine.fit(custom_dataset)
 
         return self.nlu_engine
 
