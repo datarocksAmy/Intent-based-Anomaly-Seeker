@@ -1,17 +1,20 @@
 from __future__ import unicode_literals, print_function
+
 import io
 import json
+import string
+from os import getcwd
+from random import sample
+
+import pandas as pd
+import ruamel.yaml
+from nltk import ngrams
+from pyarrow.feather import write_feather
 from snips_nlu import SnipsNLUEngine
 from snips_nlu.default_configs import CONFIG_EN
-from os import getcwd
-from os import getcwd
-from nltk import ngrams
-import pandas as pd
-from data_silo.data_processing import DataProcessing
-from random import sample
-import ruamel.yaml
 from spacy import load
-import string
+
+from data_silo.data_processing import DataProcessing
 
 
 class BrewSnips:
@@ -113,6 +116,7 @@ class BrewSnips:
     def get_nlu_engine(self):
         """
         Get JSON file with our intents and entities tag from part of our input data.
+
         Update the Snips NLU Engine.
 
         :return:    ( Snips NLU Object ) Customized Snips NLU Engine
@@ -161,8 +165,9 @@ class BrewSnips:
             # Set Intent Similarity Score w/ New Intent
             data_content_df["NLU_Intent_Score"] = data_content_df["Query"].apply(self.parse_intent_name_prob)
             # Split into individual columns : Intent and Score
-            data_content_df[["NLU_Intent", "NLU_Score"]] = pd.DataFrame(data_content_df["NLU_Score"].tolist(),
-                                                                                 index=data_content_df.index)
+            data_content_df[["NLU_Intent", "NLU_Score"]] = pd.DataFrame(data_content_df["NLU_Intent_Score"].tolist(),
+                                                                        index=data_content_df.index)
             # Drop unused column
             data_content_df.drop("NLU_Intent_Score", axis=1, inplace=True)
-            data_content_df.to_excel("NLUOutput.xlsx", index=False)
+            # Store all output into feather file
+            write_feather(data_content_df, "SnipsNLUData.feather")
