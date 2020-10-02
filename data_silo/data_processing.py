@@ -13,7 +13,6 @@ class DataProcessing:
         self.json_arg = json_arg
         self.data_df = None
 
-
     def retrieve_process_json(self):
         """
         Input data from json file.
