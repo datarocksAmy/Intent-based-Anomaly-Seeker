@@ -171,4 +171,4 @@ class BrewSnips:
             # Drop unused column
             data_content_df.drop("NLU_Intent_Score", axis=1, inplace=True)
             # Store all output into feather file
-            write_feather(data_content_df, "SnipsNLUData.feather")
+            write_feather(data_content_df, f"{getcwd()}/data_lake/SnipsNLUData.feather")
